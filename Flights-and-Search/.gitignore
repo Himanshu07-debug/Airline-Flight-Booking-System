@@ -1,0 +1,11 @@
+node_modules
+
+Thoery.md
+
+.env
+
+src/config/config.json
+
+src/seeders/20240602172259-add-airplanes.js
+
+src/utils/error_codes.js

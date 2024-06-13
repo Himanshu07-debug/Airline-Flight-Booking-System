@@ -12,6 +12,9 @@ const PORT = process.env.PORT;
 app.use(morgan('combined'));
 
 
+app.use("/authservice", createProxyMiddleware({target : process.env.AUTH_SERVICE, changeOrigin: true}));
+
+
 app.use('/bookingservice', async (req, res, next) => {
 
     try{
@@ -38,7 +41,6 @@ app.use('/bookingservice', async (req, res, next) => {
 
 })
 
-  
 app.use("/bookingservice", createProxyMiddleware({target : process.env.BOOKING_SERVICE, changeOrigin: true}));
 
 
